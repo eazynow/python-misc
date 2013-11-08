@@ -3,7 +3,7 @@ import json
 from urllib2 import HTTPError
 from httplib import BadStatusLine
 
-def call_service(url, method='GET', body=None, contentType='application/json', accept='application/json', debug=False):
+def call_service(url, method='GET', body=None, contentType='application/json', accept='application/json', user=None, pass=None, debug=False):
     opener = urllib2.build_opener(urllib2.HTTPHandler)
     request = urllib2.Request(url, data=body)
     request.get_method = lambda: method
